@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6y3dsf752br1"]
+
+[ext_resource type="Script" uid="uid://bus8f4cuawx0t" path="res://scripts/player1.gd" id="1_p57ef"]
+[ext_resource type="Texture2D" uid="uid://d2jl1eiwug3dt" path="res://assets/sprites/player.png" id="2_u5sy4"]
+[ext_resource type="Script" uid="uid://bovfbxib5jekm" path="res://scripts/player2.gd" id="3_gee14"]
+[ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://assets/sprites/floor.png" id="4_0tnpc"]
+[ext_resource type="Script" uid="uid://yphukippswpf" path="res://scripts/button.gd" id="5_vtaks"]
+[ext_resource type="Texture2D" uid="uid://cwvvg8foqd5g2" path="res://assets/sprites/pixel.png" id="6_kvpfn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(360, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(20, 4)
+
+[node name="Game" type="Node2D"]
+
+[node name="Player1" type="CharacterBody2D" parent="."]
+script = ExtResource("1_p57ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource("CapsuleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player1"]
+texture = ExtResource("2_u5sy4")
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(100, 0)
+script = ExtResource("3_gee14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource("CapsuleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+texture = ExtResource("2_u5sy4")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+scale = Vector2(100, 1)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+scale = Vector2(100, 1)
+texture = ExtResource("4_0tnpc")
+
+[node name="Button" type="Area2D" parent="."]
+position = Vector2(0, 1000)
+script = ExtResource("5_vtaks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
+position = Vector2(178, -20)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button/CollisionShape2D"]
+position = Vector2(-9.536743e-07, 0)
+scale = Vector2(9.999999, 2)
+texture = ExtResource("6_kvpfn")
+
+[connection signal="body_entered" from="Button" to="Button" method="_on_Button_body_entered"]
