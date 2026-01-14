@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://b6y3dsf752br1"]
+[gd_scene load_steps=6 format=3 uid="uid://b6y3dsf752br1"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" uid="uid://bus8f4cuawx0t" path="res://player.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://eibfi0h166h4" path="res://icon.svg" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://floor.png" id="3_epypp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(360, 16)
+
+[node name="Game" type="Node2D"]
+
+[node name="Player1" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource("CapsuleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player1"]
+texture = ExtResource("2_epypp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_epypp")
