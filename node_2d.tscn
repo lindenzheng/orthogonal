@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6y3dsf752br1"]
+[gd_scene load_steps=7 format=3 uid="uid://b6y3dsf752br1"]
 
-[ext_resource type="Script" uid="uid://bus8f4cuawx0t" path="res://player.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://eibfi0h166h4" path="res://icon.svg" id="2_epypp"]
+[ext_resource type="Script" uid="uid://bus8f4cuawx0t" path="res://player1.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://d2jl1eiwug3dt" path="res://player.png" id="2_epypp"]
+[ext_resource type="Script" uid="uid://bovfbxib5jekm" path="res://player2.gd" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://floor.png" id="3_epypp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hol4"]
@@ -18,6 +19,16 @@ script = ExtResource("1_0e48y")
 shape = SubResource("CapsuleShape2D_0hol4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player1"]
+texture = ExtResource("2_epypp")
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(100, 0)
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource("CapsuleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
 texture = ExtResource("2_epypp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
