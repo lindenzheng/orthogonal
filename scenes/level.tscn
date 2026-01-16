@@ -1,15 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene load_steps=8 format=3 uid="uid://jbpbc80kq8s2"]
 
-[ext_resource type="Script" uid="uid://bus8f4cuawx0t" path="res://scripts/player1.gd" id="1_b121j"]
-[ext_resource type="Resource" uid="uid://bwt8l18karmti" path="res://scripts/player1_controls.tres" id="2_8c41q"]
-[ext_resource type="Texture2D" uid="uid://d2jl1eiwug3dt" path="res://assets/sprites/player.png" id="3_olg7q"]
-[ext_resource type="Script" uid="uid://bovfbxib5jekm" path="res://scripts/player2.gd" id="4_t1rx8"]
+[ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player2_controls.tres" id="5_8iemx"]
 [ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://assets/sprites/floor.png" id="6_64w2a"]
 [ext_resource type="Script" uid="uid://yphukippswpf" path="res://scripts/button.gd" id="7_fpun6"]
 [ext_resource type="Texture2D" uid="uid://cwvvg8foqd5g2" path="res://assets/sprites/pixel.png" id="8_wc255"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hol4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(360, 16)
@@ -19,26 +14,11 @@ size = Vector2(20, 4)
 
 [node name="Level" type="Node2D"]
 
-[node name="Player1" type="CharacterBody2D" parent="."]
-script = ExtResource("1_b121j")
-controls = ExtResource("2_8c41q")
+[node name="Player1" parent="." instance=ExtResource("1_mx8sn")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-shape = SubResource("CapsuleShape2D_0hol4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player1"]
-texture = ExtResource("3_olg7q")
-
-[node name="Player2" type="CharacterBody2D" parent="."]
-position = Vector2(100, 0)
-script = ExtResource("4_t1rx8")
+[node name="Player2" parent="." instance=ExtResource("1_mx8sn")]
+position = Vector2(64, 0)
 controls = ExtResource("5_8iemx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-shape = SubResource("CapsuleShape2D_0hol4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player2"]
-texture = ExtResource("3_olg7q")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(0, 1000)
