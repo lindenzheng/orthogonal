@@ -1,16 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene load_steps=6 format=3 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://uaxu3fr55fp8" path="res://scenes/button.tscn" id="4_mx8sn"]
 [ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player2_controls.tres" id="5_8iemx"]
 [ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://assets/sprites/floor.png" id="6_64w2a"]
-[ext_resource type="Script" uid="uid://yphukippswpf" path="res://scripts/button.gd" id="7_fpun6"]
-[ext_resource type="Texture2D" uid="uid://cwvvg8foqd5g2" path="res://assets/sprites/pixel.png" id="8_wc255"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(360, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(20, 4)
 
 [node name="Level" type="Node2D"]
 
@@ -31,18 +27,8 @@ shape = SubResource("RectangleShape2D_0e48y")
 scale = Vector2(100, 1)
 texture = ExtResource("6_64w2a")
 
-[node name="Button" type="Area2D" parent="."]
+[node name="Button" parent="." instance=ExtResource("4_mx8sn")]
 position = Vector2(0, 1000)
-script = ExtResource("7_fpun6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
-position = Vector2(178, -20)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_0hol4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Button/CollisionShape2D"]
-position = Vector2(-9.536743e-07, 0)
-scale = Vector2(9.999999, 2)
-texture = ExtResource("8_wc255")
-
-[connection signal="body_entered" from="Button" to="Button" method="_on_Button_body_entered"]
+[node name="Button2" parent="." instance=ExtResource("4_mx8sn")]
+position = Vector2(71, 1000)
