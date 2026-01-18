@@ -1,6 +1,7 @@
 # Orthogonal
 
 Controls:
+	
 	# Player 1
 	- AD: Left and Right
 	- W: Interact
