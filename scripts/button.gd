@@ -31,10 +31,6 @@ func _set_sprite_visibility(is_pressed):
 	sprite_normal.visible = not is_pressed
 	sprite_pressed.visible = is_pressed
 
-#func _toggle_sprite_visibility():
-	#sprite_normal.visible = !sprite_normal.visible
-	#sprite_pressed.visible = !sprite_pressed.visible
-
 func _on_Area2D_body_exited(body):
 	objects_touching -= 1
 	#print(body.name + " exited the button") # Debug
