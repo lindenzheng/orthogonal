@@ -1,51 +1,70 @@
-[gd_scene load_steps=8 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene load_steps=7 format=3 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://d2vxqdvwse0p7" path="res://scenes/floor.tscn" id="2_2r41h"]
 [ext_resource type="PackedScene" uid="uid://uaxu3fr55fp8" path="res://scenes/button.tscn" id="4_mx8sn"]
 [ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player2_controls.tres" id="5_8iemx"]
 [ext_resource type="PackedScene" uid="uid://bojskohbtf8ng" path="res://scenes/lever.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://d1pwbfp03a1fn" path="res://scenes/box.tscn" id="6_2r41h"]
-[ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://assets/sprites/floor.png" id="6_64w2a"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
-size = Vector2(360, 16)
 
 [node name="Level" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_mx8sn")]
-position = Vector2(-37, 952)
+position = Vector2(-21, 960)
 
 [node name="Player2" parent="." instance=ExtResource("1_mx8sn")]
-position = Vector2(325, 950)
+position = Vector2(-40, 1310)
 controls = ExtResource("5_8iemx")
 
-[node name="Floor" type="StaticBody2D" parent="."]
+[node name="Player1_Level" type="Node" parent="."]
+
+[node name="Floor" parent="Player1_Level" instance=ExtResource("2_2r41h")]
 position = Vector2(0, 1000)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-scale = Vector2(100, 1)
-shape = SubResource("RectangleShape2D_0e48y")
+[node name="Objects" type="Node" parent="Player1_Level"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Floor"]
-scale = Vector2(100, 1)
-texture = ExtResource("6_64w2a")
+[node name="Button" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
+position = Vector2(43, 981)
 
-[node name="Objects" type="Node" parent="."]
+[node name="Button2" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
+position = Vector2(212, 983)
 
-[node name="Button" parent="Objects" instance=ExtResource("4_mx8sn")]
-position = Vector2(0, 1000)
+[node name="Lever" parent="Player1_Level/Objects" instance=ExtResource("5_ppgk2")]
+position = Vector2(337, 957)
 
-[node name="Button2" parent="Objects" instance=ExtResource("4_mx8sn")]
-position = Vector2(71, 1000)
-
-[node name="Lever" parent="Objects" instance=ExtResource("5_ppgk2")]
-position = Vector2(413, 953)
-
-[node name="Box" parent="Objects" instance=ExtResource("6_2r41h")]
+[node name="Box" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(63, 818)
 
-[node name="Box2" parent="Objects" instance=ExtResource("6_2r41h")]
+[node name="Box2" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(-333, 839)
 
-[node name="Box3" parent="Objects" instance=ExtResource("6_2r41h")]
+[node name="Box3" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(497, 805)
+
+[node name="Player2_Level" type="Node" parent="."]
+
+[node name="Floor" parent="Player2_Level" instance=ExtResource("2_2r41h")]
+position = Vector2(0, 1353)
+
+[node name="Objects" type="Node" parent="Player2_Level"]
+
+[node name="Button" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
+position = Vector2(117, 1334)
+
+[node name="Button2" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
+position = Vector2(267, 1334)
+
+[node name="Lever" parent="Player2_Level/Objects" instance=ExtResource("5_ppgk2")]
+position = Vector2(30, 1310)
+
+[node name="Lever2" parent="Player2_Level/Objects" instance=ExtResource("5_ppgk2")]
+position = Vector2(218, 1310)
+
+[node name="Box" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
+position = Vector2(100, 1247)
+
+[node name="Box2" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
+position = Vector2(-103, 1301)
+
+[node name="Box3" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
+position = Vector2(342, 1303)

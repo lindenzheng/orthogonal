@@ -11,7 +11,6 @@ size = Vector2(20, 4)
 script = ExtResource("1_rhj8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(178, -20)
 scale = Vector2(2, 2.5)
 shape = SubResource("RectangleShape2D_0hol4")
 
@@ -21,7 +20,6 @@ scale = Vector2(0.5, 0.35)
 texture = ExtResource("2_i7y4x")
 
 [node name="ButtonPressed" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(0, 1)
 scale = Vector2(0.5, 0.15)
 texture = ExtResource("3_3q610")
 
