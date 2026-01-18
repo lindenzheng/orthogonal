@@ -18,8 +18,8 @@ func _on_Area2D_body_exited(body):
 	if body.is_in_group("player"):
 		character_in_range = false
 
-func _process(delta):
-	if character_in_range && (Input.is_action_just_pressed("p1_interact") || Input.is_action_just_pressed("p2_interact")):
+func _process(_delta):
+	if character_in_range and (Input.is_action_just_pressed("p1_interact") or Input.is_action_just_pressed("p2_interact")):
 		_press_lever()
 
 func _press_lever():

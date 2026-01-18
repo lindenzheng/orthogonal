@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene load_steps=8 format=3 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://uaxu3fr55fp8" path="res://scenes/button.tscn" id="4_mx8sn"]
 [ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player2_controls.tres" id="5_8iemx"]
 [ext_resource type="PackedScene" uid="uid://bojskohbtf8ng" path="res://scenes/lever.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://d1pwbfp03a1fn" path="res://scenes/box.tscn" id="6_2r41h"]
 [ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://assets/sprites/floor.png" id="6_64w2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
@@ -12,9 +13,10 @@ size = Vector2(360, 16)
 [node name="Level" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_mx8sn")]
+position = Vector2(-37, 952)
 
 [node name="Player2" parent="." instance=ExtResource("1_mx8sn")]
-position = Vector2(64, 0)
+position = Vector2(325, 950)
 controls = ExtResource("5_8iemx")
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -28,11 +30,22 @@ shape = SubResource("RectangleShape2D_0e48y")
 scale = Vector2(100, 1)
 texture = ExtResource("6_64w2a")
 
-[node name="Button" parent="." instance=ExtResource("4_mx8sn")]
+[node name="Objects" type="Node" parent="."]
+
+[node name="Button" parent="Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(0, 1000)
 
-[node name="Button2" parent="." instance=ExtResource("4_mx8sn")]
+[node name="Button2" parent="Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(71, 1000)
 
-[node name="Lever" parent="." instance=ExtResource("5_ppgk2")]
+[node name="Lever" parent="Objects" instance=ExtResource("5_ppgk2")]
 position = Vector2(413, 953)
+
+[node name="Box" parent="Objects" instance=ExtResource("6_2r41h")]
+position = Vector2(63, 818)
+
+[node name="Box2" parent="Objects" instance=ExtResource("6_2r41h")]
+position = Vector2(-333, 839)
+
+[node name="Box3" parent="Objects" instance=ExtResource("6_2r41h")]
+position = Vector2(497, 805)
