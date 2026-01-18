@@ -13,12 +13,8 @@ func _on_Button_body_entered(body):
 	#print(body.name + " touched the button") #Debug
 	if objects_touching == 0:
 		print(body.name + " pressed the button!") #Debug
-		_change_button_visuals()
+		await _animate_scale(sprite_normal, Vector2(10.0, 1.0), Vector2(10.0, 3.0))
 	objects_touching += 1
-		
-func _change_button_visuals():
-	#print("Animation!") # Debug
-	await _animate_scale(sprite_normal, Vector2(10.0, 1.0), Vector2(10.0, 3.0))
 	
 func _animate_scale(sprite, start_scale, end_scale): 
 	var tween = get_tree().create_tween() # Creates a tween (object that does a transition animation)
