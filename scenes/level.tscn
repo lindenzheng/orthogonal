@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene load_steps=9 format=3 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d2vxqdvwse0p7" path="res://scenes/floor.tscn" id="2_2r41h"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bojskohbtf8ng" path="res://scenes/lever.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://d1pwbfp03a1fn" path="res://scenes/box.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://dx7xhd7awh7ax" path="res://scenes/disappear_block.tscn" id="7_klq6b"]
+[ext_resource type="PackedScene" uid="uid://dp2p3bey3tnwp" path="res://scenes/moving_platform.tscn" id="8_b121j"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_mx8sn")]
-position = Vector2(-21, 960)
+position = Vector2(-25, 897)
 
 [node name="Player2" parent="." instance=ExtResource("1_mx8sn")]
 position = Vector2(-40, 1310)
@@ -23,6 +24,12 @@ controls = ExtResource("5_8iemx")
 position = Vector2(0, 1000)
 
 [node name="Objects" type="Node" parent="Player1_Level"]
+
+[node name="Moving_Platform1" parent="Player1_Level/Objects" instance=ExtResource("8_b121j")]
+position = Vector2(501, 1006)
+
+[node name="Moving_Platform2" parent="Player1_Level/Objects" instance=ExtResource("8_b121j")]
+position = Vector2(-406, 1004)
 
 [node name="Button1" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(43, 981)
@@ -51,6 +58,12 @@ position = Vector2(497, 805)
 position = Vector2(0, 1353)
 
 [node name="Objects" type="Node" parent="Player2_Level"]
+
+[node name="Moving_Platform3" parent="Player2_Level/Objects" instance=ExtResource("8_b121j")]
+position = Vector2(-402, 1361)
+
+[node name="Moving_Platform4" parent="Player2_Level/Objects" instance=ExtResource("8_b121j")]
+position = Vector2(598, 1357)
 
 [node name="Button3" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(117, 1334)
