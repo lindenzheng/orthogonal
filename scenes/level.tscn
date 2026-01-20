@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene load_steps=8 format=3 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d2vxqdvwse0p7" path="res://scenes/floor.tscn" id="2_2r41h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player2_controls.tres" id="5_8iemx"]
 [ext_resource type="PackedScene" uid="uid://bojskohbtf8ng" path="res://scenes/lever.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://d1pwbfp03a1fn" path="res://scenes/box.tscn" id="6_2r41h"]
+[ext_resource type="PackedScene" uid="uid://dx7xhd7awh7ax" path="res://scenes/disappear_block.tscn" id="7_klq6b"]
 
 [node name="Level" type="Node2D"]
 
@@ -23,17 +24,20 @@ position = Vector2(0, 1000)
 
 [node name="Objects" type="Node" parent="Player1_Level"]
 
-[node name="Button" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
+[node name="Button1" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(43, 981)
 
 [node name="Button2" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(212, 983)
 
-[node name="Lever" parent="Player1_Level/Objects" instance=ExtResource("5_ppgk2")]
+[node name="Lever1" parent="Player1_Level/Objects" instance=ExtResource("5_ppgk2")]
 position = Vector2(337, 957)
 
-[node name="Box" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
-position = Vector2(63, 818)
+[node name="Button1&2Block" parent="Player1_Level/Objects" instance=ExtResource("7_klq6b")]
+position = Vector2(63, 852)
+
+[node name="Box1" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
+position = Vector2(60, 801)
 
 [node name="Box2" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(-333, 839)
@@ -48,23 +52,38 @@ position = Vector2(0, 1353)
 
 [node name="Objects" type="Node" parent="Player2_Level"]
 
-[node name="Button" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
+[node name="Button3" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(117, 1334)
 
-[node name="Button2" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
+[node name="Button4" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
 position = Vector2(267, 1334)
-
-[node name="Lever" parent="Player2_Level/Objects" instance=ExtResource("5_ppgk2")]
-position = Vector2(30, 1310)
 
 [node name="Lever2" parent="Player2_Level/Objects" instance=ExtResource("5_ppgk2")]
 position = Vector2(218, 1310)
 
-[node name="Box" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
+[node name="Lever3" parent="Player2_Level/Objects" instance=ExtResource("5_ppgk2")]
+position = Vector2(531, 1309)
+
+[node name="Button2Block" parent="Player2_Level/Objects" instance=ExtResource("7_klq6b")]
+position = Vector2(66, 1309)
+
+[node name="Lever2Block" parent="Player2_Level/Objects" instance=ExtResource("7_klq6b")]
+position = Vector2(279, 958)
+
+[node name="Box4" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(100, 1247)
 
-[node name="Box2" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
+[node name="Box5" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(-103, 1301)
 
-[node name="Box3" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
+[node name="Box6" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(342, 1303)
+
+[connection signal="button_pressed" from="Player1_Level/Objects/Button1" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_hide"]
+[connection signal="button_released" from="Player1_Level/Objects/Button1" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_show"]
+[connection signal="button_pressed" from="Player1_Level/Objects/Button2" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_hide"]
+[connection signal="button_pressed" from="Player1_Level/Objects/Button2" to="Player2_Level/Objects/Button2Block" method="_on_signal_hide"]
+[connection signal="button_released" from="Player1_Level/Objects/Button2" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_show"]
+[connection signal="button_released" from="Player1_Level/Objects/Button2" to="Player2_Level/Objects/Button2Block" method="_on_signal_show"]
+[connection signal="lever_off" from="Player2_Level/Objects/Lever2" to="Player2_Level/Objects/Lever2Block" method="_on_signal_show"]
+[connection signal="lever_on" from="Player2_Level/Objects/Lever2" to="Player2_Level/Objects/Lever2Block" method="_on_signal_hide"]
