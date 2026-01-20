@@ -7,5 +7,5 @@ Controls:
 	- W: Interact
 	
 	# Player 2
-	- Left and Right Arrow : Left and Right
+	- Left and Right Arrow: Left and Right
 	- Up Arrow: Interact

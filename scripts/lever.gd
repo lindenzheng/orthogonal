@@ -32,7 +32,7 @@ func _process(_delta):
 
 func _switch_lever():
 	being_pressed = true
-	print("Lever pressed by ", players_in_range.keys()[0])  # Debug to show which player pressed
+	print(self.name + " pressed by ", players_in_range.keys()[0])  # Debug to show which player pressed
 	await _animate_scale(sprite_pressed, Vector2(0.25, 0.25), Vector2(0.25, 0.25))
 	is_active = not is_active  # Switch lever on/off
 	if is_active:
