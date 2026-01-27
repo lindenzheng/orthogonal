@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed(controls.interact) and is_on_floor():
-			print(self.name + " interacted") # Debug
+			print(self.name + " interacted (", self.get_instance_id(), ")") # Debug
 		#velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -35,3 +35,8 @@ func _physics_process(delta: float) -> void:
 		if c. get_collider() is RigidBody2D:
 			var push_force = (PUSH_FORCE * velocity.length() / SPEED) + MIN_PUSH_FORCE
 			c. get_collider(). apply_central_impulse(-c.get_normal() * push_force)
+
+func teleport_player(playerId, location):
+	if self.get_instance_id() == playerId:
+		self.position = location
+		print(playerId, " was teleported to ", location)

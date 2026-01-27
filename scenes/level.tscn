@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene load_steps=10 format=3 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d2vxqdvwse0p7" path="res://scenes/floor.tscn" id="2_2r41h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1pwbfp03a1fn" path="res://scenes/box.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://dx7xhd7awh7ax" path="res://scenes/disappear_block.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://dp2p3bey3tnwp" path="res://scenes/moving_platform.tscn" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://dutbtime6keah" path="res://scenes/door.tscn" id="9_8c41q"]
 
 [node name="Level" type="Node2D"]
 
@@ -52,6 +53,9 @@ position = Vector2(-333, 839)
 [node name="Box3" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(497, 805)
 
+[node name="DoorA" parent="Player1_Level/Objects" instance=ExtResource("9_8c41q")]
+position = Vector2(-266, 956)
+
 [node name="Player2_Level" type="Node" parent="."]
 
 [node name="Floor" parent="Player2_Level" instance=ExtResource("2_2r41h")]
@@ -92,11 +96,20 @@ position = Vector2(-103, 1301)
 [node name="Box6" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
 position = Vector2(342, 1303)
 
+[node name="DoorA2" parent="Player2_Level/Objects" instance=ExtResource("9_8c41q")]
+position = Vector2(-266, 1313)
+
 [connection signal="button_pressed" from="Player1_Level/Objects/Button1" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_hide"]
 [connection signal="button_released" from="Player1_Level/Objects/Button1" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_show"]
 [connection signal="button_pressed" from="Player1_Level/Objects/Button2" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_hide"]
 [connection signal="button_pressed" from="Player1_Level/Objects/Button2" to="Player2_Level/Objects/Button2Block" method="_on_signal_hide"]
 [connection signal="button_released" from="Player1_Level/Objects/Button2" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_show"]
 [connection signal="button_released" from="Player1_Level/Objects/Button2" to="Player2_Level/Objects/Button2Block" method="_on_signal_show"]
+[connection signal="door_open" from="Player1_Level/Objects/DoorA" to="Player2_Level/Objects/DoorA2" method="_on_door_open"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorA" to="Player1" method="teleport_player"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorA" to="Player2" method="teleport_player"]
 [connection signal="lever_off" from="Player2_Level/Objects/Lever2" to="Player2_Level/Objects/Lever2Block" method="_on_signal_show"]
 [connection signal="lever_on" from="Player2_Level/Objects/Lever2" to="Player2_Level/Objects/Lever2Block" method="_on_signal_hide"]
+[connection signal="door_open" from="Player2_Level/Objects/DoorA2" to="Player1_Level/Objects/DoorA" method="_on_door_open"]
+[connection signal="teleport_player" from="Player2_Level/Objects/DoorA2" to="Player1" method="teleport_player"]
+[connection signal="teleport_player" from="Player2_Level/Objects/DoorA2" to="Player2" method="teleport_player"]

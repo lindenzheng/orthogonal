@@ -11,7 +11,7 @@ var is_animating = false
 func _ready():
 	sprite_pressed.visible = false  # Hide pressed sprite initially
 
-func _on_Button_body_entered(body):
+func _on_Area2D_body_entered(body):
 	if objects_touching == 0:  # Only press if it's the first contact
 		_handle_button_press(body)
 	objects_touching += 1
