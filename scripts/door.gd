@@ -11,6 +11,7 @@ var location = self.global_position
 var players_in_range = {}
 var being_pressed = false
 var is_active = false
+var pressedPlayerId
 
 func _ready():
 	# Ensure the pressed sprite is hidden at the start
@@ -36,10 +37,11 @@ func _process(_delta):
 
 func _open_door():
 	being_pressed = true
-	print(self.name + " opened by ", players_in_range.keys()[0])  # Debug to show which player pressed
+	pressedPlayerId = players_in_range.keys()[0]
+	print(self.name + " opened by ", pressedPlayerId)  # Debug to show which player pressed
 	await _animate_scale(sprite_pressed, Vector2(0.25, 0.25), Vector2(0.25, 0.25))
 	print("doorOpen")
-	emit_signal("door_open", players_in_range.keys()[0], location)
+	emit_signal("door_open", pressedPlayerId, location)
 	print("doorClosed")
 	await _animate_scale(sprite_normal, Vector2(0.25, 0.25), Vector2(0.25, 0.25))
 	emit_signal("door_closed")
