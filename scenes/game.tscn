@@ -1,51 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmsqgo3mehqdn"]
+[gd_scene format=3 uid="uid://bmsqgo3mehqdn"]
 
 [ext_resource type="Script" uid="uid://chxlxjmr8f4hi" path="res://scripts/game.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://jbpbc80kq8s2" path="res://scenes/level.tscn" id="2_yqjtg"]
 
-[node name="Game" type="Control"]
+[node name="Game" type="Control" unique_id=762848362]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_u5sy4")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=51549558]
 layout_mode = 0
 offset_right = 1042.0
 offset_bottom = 512.0
 
-[node name="LeftViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="LeftViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=425844667]
 layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
 
-[node name="LeftSubViewport" type="SubViewport" parent="HBoxContainer/LeftViewportContainer"]
+[node name="LeftSubViewport" type="SubViewport" parent="HBoxContainer/LeftViewportContainer" unique_id=1778681578]
 unique_name_in_owner = true
 handle_input_locally = false
 render_target_update_mode = 4
 
-[node name="LeftCamera2D" type="Camera2D" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport"]
+[node name="LeftCamera2D" type="Camera2D" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport" unique_id=116082882]
 unique_name_in_owner = true
 position_smoothing_enabled = true
 
-[node name="Level" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport" instance=ExtResource("2_yqjtg")]
+[node name="Level" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport" unique_id=1962545105 instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=1679378043]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="RightViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="RightViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=696009539]
 layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
 
-[node name="RightSubViewport" type="SubViewport" parent="HBoxContainer/RightViewportContainer"]
+[node name="RightSubViewport" type="SubViewport" parent="HBoxContainer/RightViewportContainer" unique_id=937799425]
 unique_name_in_owner = true
 handle_input_locally = false
 render_target_update_mode = 4
 
-[node name="RightCamera2D" type="Camera2D" parent="HBoxContainer/RightViewportContainer/RightSubViewport"]
+[node name="RightCamera2D" type="Camera2D" parent="HBoxContainer/RightViewportContainer/RightSubViewport" unique_id=1086781770]
 unique_name_in_owner = true
 position_smoothing_enabled = true

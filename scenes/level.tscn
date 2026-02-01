@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://jbpbc80kq8s2"]
+[gd_scene format=3 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d2vxqdvwse0p7" path="res://scenes/floor.tscn" id="2_2r41h"]
@@ -10,93 +10,95 @@
 [ext_resource type="PackedScene" uid="uid://dp2p3bey3tnwp" path="res://scenes/moving_platform.tscn" id="8_b121j"]
 [ext_resource type="PackedScene" uid="uid://dutbtime6keah" path="res://scenes/door.tscn" id="9_8c41q"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=736440869]
 
-[node name="Player1" parent="." instance=ExtResource("1_mx8sn")]
+[node name="Player1" parent="." unique_id=2045350330 instance=ExtResource("1_mx8sn")]
 position = Vector2(-25, 897)
 
-[node name="Player2" parent="." instance=ExtResource("1_mx8sn")]
+[node name="Player2" parent="." unique_id=1520581515 instance=ExtResource("1_mx8sn")]
 position = Vector2(-40, 1310)
 controls = ExtResource("5_8iemx")
 
-[node name="Player1_Level" type="Node" parent="."]
+[node name="Player1_Level" type="Node" parent="." unique_id=632130190]
 
-[node name="Floor" parent="Player1_Level" instance=ExtResource("2_2r41h")]
+[node name="Floor" parent="Player1_Level" unique_id=124685513 instance=ExtResource("2_2r41h")]
 position = Vector2(0, 1000)
 
-[node name="Objects" type="Node" parent="Player1_Level"]
+[node name="Objects" type="Node" parent="Player1_Level" unique_id=746820047]
 
-[node name="Moving_Platform1" parent="Player1_Level/Objects" instance=ExtResource("8_b121j")]
+[node name="Moving_Platform1" parent="Player1_Level/Objects" unique_id=1737460019 instance=ExtResource("8_b121j")]
 position = Vector2(501, 1006)
 
-[node name="Moving_Platform2" parent="Player1_Level/Objects" instance=ExtResource("8_b121j")]
+[node name="Moving_Platform2" parent="Player1_Level/Objects" unique_id=1995587988 instance=ExtResource("8_b121j")]
 position = Vector2(-406, 1004)
 
-[node name="Button1" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
+[node name="Button1" parent="Player1_Level/Objects" unique_id=2144944533 instance=ExtResource("4_mx8sn")]
 position = Vector2(43, 981)
 
-[node name="Button2" parent="Player1_Level/Objects" instance=ExtResource("4_mx8sn")]
+[node name="Button2" parent="Player1_Level/Objects" unique_id=30754 instance=ExtResource("4_mx8sn")]
 position = Vector2(212, 983)
 
-[node name="Lever1" parent="Player1_Level/Objects" instance=ExtResource("5_ppgk2")]
+[node name="Lever1" parent="Player1_Level/Objects" unique_id=1593858259 instance=ExtResource("5_ppgk2")]
 position = Vector2(337, 957)
 
-[node name="Button1&2Block" parent="Player1_Level/Objects" instance=ExtResource("7_klq6b")]
+[node name="Button1&2Block" parent="Player1_Level/Objects" unique_id=1189464805 instance=ExtResource("7_klq6b")]
 position = Vector2(63, 852)
 
-[node name="Box1" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
-position = Vector2(60, 801)
+[node name="BoxA1" parent="Player1_Level/Objects" unique_id=283382068 node_paths=PackedStringArray("linkedBody") instance=ExtResource("6_2r41h")]
+position = Vector2(750, 852)
+linkedBody = NodePath("../../../Player2_Level/Objects/BoxA2")
 
-[node name="Box2" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
+[node name="Box2" parent="Player1_Level/Objects" unique_id=2054436628 instance=ExtResource("6_2r41h")]
 position = Vector2(-333, 839)
 
-[node name="Box3" parent="Player1_Level/Objects" instance=ExtResource("6_2r41h")]
+[node name="Box3" parent="Player1_Level/Objects" unique_id=848930109 instance=ExtResource("6_2r41h")]
 position = Vector2(497, 805)
 
-[node name="DoorA" parent="Player1_Level/Objects" instance=ExtResource("9_8c41q")]
+[node name="DoorA" parent="Player1_Level/Objects" unique_id=1603739289 instance=ExtResource("9_8c41q")]
 position = Vector2(-266, 956)
 
-[node name="Player2_Level" type="Node" parent="."]
+[node name="Player2_Level" type="Node" parent="." unique_id=23151797]
 
-[node name="Floor" parent="Player2_Level" instance=ExtResource("2_2r41h")]
+[node name="Floor" parent="Player2_Level" unique_id=1931430969 instance=ExtResource("2_2r41h")]
 position = Vector2(0, 1353)
 
-[node name="Objects" type="Node" parent="Player2_Level"]
+[node name="Objects" type="Node" parent="Player2_Level" unique_id=2115897889]
 
-[node name="Moving_Platform3" parent="Player2_Level/Objects" instance=ExtResource("8_b121j")]
+[node name="Moving_Platform3" parent="Player2_Level/Objects" unique_id=151575171 instance=ExtResource("8_b121j")]
 position = Vector2(-402, 1361)
 
-[node name="Moving_Platform4" parent="Player2_Level/Objects" instance=ExtResource("8_b121j")]
+[node name="Moving_Platform4" parent="Player2_Level/Objects" unique_id=1367095033 instance=ExtResource("8_b121j")]
 position = Vector2(598, 1357)
 
-[node name="Button3" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
+[node name="Button3" parent="Player2_Level/Objects" unique_id=78704226 instance=ExtResource("4_mx8sn")]
 position = Vector2(117, 1334)
 
-[node name="Button4" parent="Player2_Level/Objects" instance=ExtResource("4_mx8sn")]
+[node name="Button4" parent="Player2_Level/Objects" unique_id=1890299794 instance=ExtResource("4_mx8sn")]
 position = Vector2(267, 1334)
 
-[node name="Lever2" parent="Player2_Level/Objects" instance=ExtResource("5_ppgk2")]
+[node name="Lever2" parent="Player2_Level/Objects" unique_id=1594541273 instance=ExtResource("5_ppgk2")]
 position = Vector2(218, 1310)
 
-[node name="Lever3" parent="Player2_Level/Objects" instance=ExtResource("5_ppgk2")]
+[node name="Lever3" parent="Player2_Level/Objects" unique_id=1291819938 instance=ExtResource("5_ppgk2")]
 position = Vector2(531, 1309)
 
-[node name="Button2Block" parent="Player2_Level/Objects" instance=ExtResource("7_klq6b")]
+[node name="Button2Block" parent="Player2_Level/Objects" unique_id=1976236089 instance=ExtResource("7_klq6b")]
 position = Vector2(66, 1309)
 
-[node name="Lever2Block" parent="Player2_Level/Objects" instance=ExtResource("7_klq6b")]
+[node name="Lever2Block" parent="Player2_Level/Objects" unique_id=1830454141 instance=ExtResource("7_klq6b")]
 position = Vector2(279, 958)
 
-[node name="Box4" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
-position = Vector2(100, 1247)
+[node name="BoxA2" parent="Player2_Level/Objects" unique_id=1080582713 node_paths=PackedStringArray("linkedBody") instance=ExtResource("6_2r41h")]
+position = Vector2(750, 1270)
+linkedBody = NodePath("../../../Player1_Level/Objects/BoxA1")
 
-[node name="Box5" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
+[node name="Box5" parent="Player2_Level/Objects" unique_id=2067921341 instance=ExtResource("6_2r41h")]
 position = Vector2(-103, 1301)
 
-[node name="Box6" parent="Player2_Level/Objects" instance=ExtResource("6_2r41h")]
-position = Vector2(342, 1303)
+[node name="Box6" parent="Player2_Level/Objects" unique_id=1665560 instance=ExtResource("6_2r41h")]
+position = Vector2(-102, 1257)
 
-[node name="DoorA2" parent="Player2_Level/Objects" instance=ExtResource("9_8c41q")]
+[node name="DoorA2" parent="Player2_Level/Objects" unique_id=182554850 instance=ExtResource("9_8c41q")]
 position = Vector2(-266, 1313)
 
 [connection signal="button_pressed" from="Player1_Level/Objects/Button1" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_hide"]

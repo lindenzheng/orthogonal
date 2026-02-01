@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp2p3bey3tnwp"]
+[gd_scene format=3 uid="uid://dp2p3bey3tnwp"]
 
 [ext_resource type="Texture2D" uid="uid://cwvvg8foqd5g2" path="res://assets/sprites/pixel.png" id="1_ms375"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1tdcd"]
+
+[sub_resource type="Animation" id="Animation_1tdcd"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_ms375"]
 resource_name = "move"
@@ -21,30 +24,25 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -100), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_1tdcd"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mb26n"]
 _data = {
 &"RESET": SubResource("Animation_1tdcd"),
 &"move": SubResource("Animation_ms375")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=574504244]
 
-[node name="Moving_Platform" type="AnimatableBody2D" parent="."]
+[node name="Moving_Platform" type="AnimatableBody2D" parent="." unique_id=1781914472]
 position = Vector2(0, -1.3598143)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_Platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_Platform" unique_id=1348448567]
 scale = Vector2(2, 0.5)
 shape = SubResource("RectangleShape2D_1tdcd")
 
-[node name="Sprite2D" type="Sprite2D" parent="Moving_Platform"]
+[node name="Sprite2D" type="Sprite2D" parent="Moving_Platform" unique_id=374961142]
 scale = Vector2(20, 5)
 texture = ExtResource("1_ms375")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_Platform"]
-libraries = {
-&"": SubResource("AnimationLibrary_mb26n")
-}
-autoplay = "move"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_Platform" unique_id=2029677502]
+libraries/ = SubResource("AnimationLibrary_mb26n")
+autoplay = &"move"
