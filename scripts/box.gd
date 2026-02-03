@@ -13,7 +13,6 @@ var last_pushed_object
 func _ready() -> void:
 	if id == 0:
 		self.visible = true
-		collision_shape.set_deferred("disabled", false) # Show the hitbox
 		collision_mask = 1  # Collision with everything
 		collision_layer = 1  # All other objects have collision 
 	else:

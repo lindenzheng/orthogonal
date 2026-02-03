@@ -118,6 +118,12 @@ position = Vector2(-402, 1301)
 [node name="DoorA2" parent="Player2_Level/Objects" unique_id=182554850 instance=ExtResource("9_8c41q")]
 position = Vector2(-266, 1313)
 
+[node name="DoorC1" parent="Player2_Level/Objects" unique_id=801211598 instance=ExtResource("9_8c41q")]
+position = Vector2(711, 1308)
+
+[node name="DoorC2" parent="Player2_Level/Objects" unique_id=680344318 instance=ExtResource("9_8c41q")]
+position = Vector2(1077, 1308)
+
 [connection signal="button_pressed" from="Player1_Level/Objects/Button1" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_hide"]
 [connection signal="button_released" from="Player1_Level/Objects/Button1" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_show"]
 [connection signal="button_pressed" from="Player1_Level/Objects/Button2" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_hide"]
@@ -140,3 +146,9 @@ position = Vector2(-266, 1313)
 [connection signal="door_open" from="Player2_Level/Objects/DoorA2" to="Player1_Level/Objects/DoorA1" method="_on_door_open"]
 [connection signal="teleport_player" from="Player2_Level/Objects/DoorA2" to="Player1" method="teleport_player"]
 [connection signal="teleport_player" from="Player2_Level/Objects/DoorA2" to="Player2" method="teleport_player"]
+[connection signal="door_open" from="Player2_Level/Objects/DoorC1" to="Player2_Level/Objects/DoorC2" method="_on_door_open"]
+[connection signal="teleport_player" from="Player2_Level/Objects/DoorC1" to="Player1" method="teleport_player"]
+[connection signal="teleport_player" from="Player2_Level/Objects/DoorC1" to="Player2" method="teleport_player"]
+[connection signal="door_open" from="Player2_Level/Objects/DoorC2" to="Player2_Level/Objects/DoorC1" method="_on_door_open"]
+[connection signal="teleport_player" from="Player2_Level/Objects/DoorC2" to="Player1" method="teleport_player"]
+[connection signal="teleport_player" from="Player2_Level/Objects/DoorC2" to="Player2" method="teleport_player"]
