@@ -23,7 +23,7 @@ func _on_Area2D_body_exited(body):
 
 # Handles button press actions
 func _handle_button_press(body):
-	print(body.name + " pressed the button!")  # Debug
+	#print(body.name + " pressed the button!")  # Debug
 	emit_signal("button_pressed")  # Emit button pressed signal
 	if not is_animating:
 		is_animating = true
@@ -34,7 +34,7 @@ func _handle_button_press(body):
 func _handle_button_release(body):
 	if not is_animating:
 		is_animating = true
-		print(body.name + " unpressed the button")  # Debug
+		#print(body.name + " unpressed the button")  # Debug
 		emit_signal("button_released")  # Emit button released signal
 		await _animate_scale(sprite_pressed, Vector2(0.5, 0.5), Vector2(0.5, 0.15))
 		_set_sprite_visibility(false)

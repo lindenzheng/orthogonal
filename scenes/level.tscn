@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://d2vxqdvwse0p7" path="res://scenes/floor.tscn" id="2_2r41h"]
+[ext_resource type="PackedScene" uid="uid://lwahxeqejnra" path="res://scenes/intersection.tscn" id="3_t1rx8"]
+[ext_resource type="Script" uid="uid://dfnfbkxp4dgbn" path="res://scripts/intersection.gd" id="4_8iemx"]
 [ext_resource type="PackedScene" uid="uid://uaxu3fr55fp8" path="res://scenes/button.tscn" id="4_mx8sn"]
 [ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player2_controls.tres" id="5_8iemx"]
 [ext_resource type="PackedScene" uid="uid://bojskohbtf8ng" path="res://scenes/lever.tscn" id="5_ppgk2"]
@@ -13,11 +15,19 @@
 [node name="Level" type="Node2D" unique_id=736440869]
 
 [node name="Player1" parent="." unique_id=2045350330 instance=ExtResource("1_mx8sn")]
-position = Vector2(-25, 897)
+position = Vector2(652, 947)
 
 [node name="Player2" parent="." unique_id=1520581515 instance=ExtResource("1_mx8sn")]
-position = Vector2(-40, 1310)
+position = Vector2(657, 1304)
 controls = ExtResource("5_8iemx")
+
+[node name="Intersections" type="Node" parent="." unique_id=308282023]
+
+[node name="Intersection1" parent="Intersections" unique_id=1974224575 instance=ExtResource("3_t1rx8")]
+position = Vector2(873, 928)
+script = ExtResource("4_8iemx")
+xScale = 5.0
+yScale = 100.0
 
 [node name="Player1_Level" type="Node" parent="." unique_id=632130190]
 
@@ -54,8 +64,14 @@ position = Vector2(-333, 839)
 [node name="Box3" parent="Player1_Level/Objects" unique_id=848930109 instance=ExtResource("6_2r41h")]
 position = Vector2(497, 805)
 
-[node name="DoorA" parent="Player1_Level/Objects" unique_id=1603739289 instance=ExtResource("9_8c41q")]
+[node name="DoorA1" parent="Player1_Level/Objects" unique_id=1603739289 instance=ExtResource("9_8c41q")]
 position = Vector2(-266, 956)
+
+[node name="DoorB1" parent="Player1_Level/Objects" unique_id=2013910602 instance=ExtResource("9_8c41q")]
+position = Vector2(744, 955)
+
+[node name="DoorB2" parent="Player1_Level/Objects" unique_id=882756613 instance=ExtResource("9_8c41q")]
+position = Vector2(1066, 953)
 
 [node name="Player2_Level" type="Node" parent="." unique_id=23151797]
 
@@ -91,12 +107,13 @@ position = Vector2(279, 958)
 [node name="BoxA2" parent="Player2_Level/Objects" unique_id=1080582713 node_paths=PackedStringArray("linkedBody") instance=ExtResource("6_2r41h")]
 position = Vector2(750, 1270)
 linkedBody = NodePath("../../../Player1_Level/Objects/BoxA1")
+id = 1
 
 [node name="Box5" parent="Player2_Level/Objects" unique_id=2067921341 instance=ExtResource("6_2r41h")]
 position = Vector2(-103, 1301)
 
 [node name="Box6" parent="Player2_Level/Objects" unique_id=1665560 instance=ExtResource("6_2r41h")]
-position = Vector2(-102, 1257)
+position = Vector2(-402, 1301)
 
 [node name="DoorA2" parent="Player2_Level/Objects" unique_id=182554850 instance=ExtResource("9_8c41q")]
 position = Vector2(-266, 1313)
@@ -107,11 +124,19 @@ position = Vector2(-266, 1313)
 [connection signal="button_pressed" from="Player1_Level/Objects/Button2" to="Player2_Level/Objects/Button2Block" method="_on_signal_hide"]
 [connection signal="button_released" from="Player1_Level/Objects/Button2" to="Player1_Level/Objects/Button1&2Block" method="_on_signal_show"]
 [connection signal="button_released" from="Player1_Level/Objects/Button2" to="Player2_Level/Objects/Button2Block" method="_on_signal_show"]
-[connection signal="door_open" from="Player1_Level/Objects/DoorA" to="Player2_Level/Objects/DoorA2" method="_on_door_open"]
-[connection signal="teleport_player" from="Player1_Level/Objects/DoorA" to="Player1" method="teleport_player"]
-[connection signal="teleport_player" from="Player1_Level/Objects/DoorA" to="Player2" method="teleport_player"]
+[connection signal="pushed_object" from="Player1_Level/Objects/BoxA1" to="Player2_Level/Objects/BoxA2" method="_on_pushed_object"]
+[connection signal="door_open" from="Player1_Level/Objects/DoorA1" to="Player2_Level/Objects/DoorA2" method="_on_door_open"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorA1" to="Player1" method="teleport_player"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorA1" to="Player2" method="teleport_player"]
+[connection signal="door_open" from="Player1_Level/Objects/DoorB1" to="Player1_Level/Objects/DoorB2" method="_on_door_open"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorB1" to="Player1" method="teleport_player"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorB1" to="Player2" method="teleport_player"]
+[connection signal="door_open" from="Player1_Level/Objects/DoorB2" to="Player1_Level/Objects/DoorB1" method="_on_door_open"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorB2" to="Player1" method="teleport_player"]
+[connection signal="teleport_player" from="Player1_Level/Objects/DoorB2" to="Player2" method="teleport_player"]
 [connection signal="lever_off" from="Player2_Level/Objects/Lever2" to="Player2_Level/Objects/Lever2Block" method="_on_signal_show"]
 [connection signal="lever_on" from="Player2_Level/Objects/Lever2" to="Player2_Level/Objects/Lever2Block" method="_on_signal_hide"]
-[connection signal="door_open" from="Player2_Level/Objects/DoorA2" to="Player1_Level/Objects/DoorA" method="_on_door_open"]
+[connection signal="pushed_object" from="Player2_Level/Objects/BoxA2" to="Player1_Level/Objects/BoxA1" method="_on_pushed_object"]
+[connection signal="door_open" from="Player2_Level/Objects/DoorA2" to="Player1_Level/Objects/DoorA1" method="_on_door_open"]
 [connection signal="teleport_player" from="Player2_Level/Objects/DoorA2" to="Player1" method="teleport_player"]
 [connection signal="teleport_player" from="Player2_Level/Objects/DoorA2" to="Player2" method="teleport_player"]

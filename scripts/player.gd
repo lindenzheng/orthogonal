@@ -11,15 +11,16 @@ var currently_pushing: RigidBody2D = null
 
 func _ready():
 	add_to_group("player")
+	z_index = 99  # Sets layer to 99
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+	# Handle jump. (Changed to interaction)
 	if Input.is_action_just_pressed(controls.interact) and is_on_floor():
-			print(self.name + " interacted (", self.get_instance_id(), ")") # Debug
+			print(self.name + " interacted (", self.get_instance_id(), ")")  # Debug
 		#velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -51,4 +52,4 @@ func _physics_process(delta: float) -> void:
 func teleport_player(playerId, location):
 	if self.get_instance_id() == playerId:
 		self.position = location
-		print(playerId, " was teleported to ", location)
+		print(playerId, " was teleported to ", location)  # Debug

@@ -11,7 +11,7 @@ var location = self.global_position
 var players_in_range = {}
 var being_pressed = false
 var is_active = false
-var pressedPlayerId
+var pressedPlayerId: int
 
 func _ready():
 	# Ensure the pressed sprite is hidden at the start
@@ -32,7 +32,7 @@ func _process(_delta):
 	if players_in_range.size() > 0:
 		for player_id in players_in_range.keys():
 			var player = players_in_range[player_id]
-			if ((Input.is_action_just_pressed("p1_interact") and player.name == "Player1") or (Input.is_action_just_pressed("p2_interact") and player.name == "Player2")) and not being_pressed:
+			if ((Input.is_action_just_pressed("p1_interact") and player.name == "Player1" and player.is_on_floor()) or (Input.is_action_just_pressed("p2_interact") and player.name == "Player2" and player.is_on_floor())) and not being_pressed:
 				_open_door()
 
 func _open_door():
@@ -40,9 +40,9 @@ func _open_door():
 	pressedPlayerId = players_in_range.keys()[0]
 	print(self.name + " opened by ", pressedPlayerId)  # Debug to show which player pressed
 	await _animate_scale(sprite_pressed, Vector2(0.25, 0.25), Vector2(0.25, 0.25))
-	print("doorOpen")
+	#print("doorOpen")  # Debug
 	emit_signal("door_open", pressedPlayerId, location)
-	print("doorClosed")
+	#print("doorClosed")  # Debug
 	await _animate_scale(sprite_normal, Vector2(0.25, 0.25), Vector2(0.25, 0.25))
 	emit_signal("door_closed")
 	being_pressed = false
@@ -59,5 +59,5 @@ func _toggle_sprite_visibility():
 	sprite_pressed.visible = !sprite_pressed.visible
 
 func _on_door_open(playerId, pairLocation):
-	print("Door opened from ", pairLocation, " to ", location)
+	#print("Door opened from ", pairLocation, " to ", location)  # Debug
 	emit_signal("teleport_player", playerId, location)
