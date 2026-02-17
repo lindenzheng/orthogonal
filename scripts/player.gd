@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
+
 	# Object Push Code
 	var pushing = false
 	for i in get_slide_collision_count():
@@ -43,12 +43,12 @@ func _physics_process(delta: float) -> void:
 			if not c.get_collider().is_in_group("pushed"):
 				c. get_collider(). add_to_group("pushed")
 			currently_pushing = c.get_collider()
-			
+
 	# If not pushing any object, remove the last pushed object from the group
 	if not pushing and currently_pushing:
 		currently_pushing.remove_from_group("pushed")
 		currently_pushing = null  # Reset the reference
-		
+
 func teleport_player(playerId, location):
 	if self.get_instance_id() == playerId:
 		self.position = location

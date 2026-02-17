@@ -40,14 +40,14 @@ func _switch_lever():
 	else:
 		emit_signal("lever_off")
 	being_pressed = false
-	
-func _animate_scale(sprite, start_scale, end_scale): 
+
+func _animate_scale(sprite, start_scale, end_scale):
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "scale", start_scale, 0.075)
 	await tween.finished
 	_toggle_sprite_visibility()
 	sprite.scale = end_scale
-	
+
 func _toggle_sprite_visibility():
 	sprite_normal.visible = !sprite_normal.visible
 	sprite_pressed.visible = !sprite_pressed.visible

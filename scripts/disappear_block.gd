@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 # Reference to the CollisionShape2D node
-@onready var collision_shape = $CollisionShape2D 
+@onready var collision_shape = $CollisionShape2D
 
 func _on_signal_hide() -> void:
 	self.visible = false
