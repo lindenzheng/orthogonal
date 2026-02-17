@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccashjjhau5nw"
-path="res://.godot/imported/waldorf.png-4b322ed972f0bad4bfa8f2bd6e7d3c3f.ctex"
+uid="uid://c0j3ihn1viagk"
+path="res://.godot/imported/waldorf scaled.png-e6d79009fc8bff35a735fb5c81a9f12b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/assets-february/waldorf.png"
-dest_files=["res://.godot/imported/waldorf.png-4b322ed972f0bad4bfa8f2bd6e7d3c3f.ctex"]
+source_file="res://Sprites/waldorf scaled.png"
+dest_files=["res://.godot/imported/waldorf scaled.png-e6d79009fc8bff35a735fb5c81a9f12b.ctex"]
 
 [params]
 
