@@ -4,12 +4,8 @@ signal pushed_object
 
 @export var linkedBody: RigidBody2D
 @export var id = 0
-
-@onready var collision_shape = $CollisionShape2D
-
 var last_pushed_object
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if id == 0:
 		self.visible = true
@@ -35,17 +31,20 @@ func _on_out_intersection(area):
 		collision_layer = 2
 
 func _process(_delta: float) -> void:
+	angular_velocity = 0 # Prevent box rotations
+	
 	# Code for linked boxes for intersections
 	if linkedBody:
-		# Set last pushed object if being pushed under condition
 		if self.is_in_group("pushed") and not linkedBody.is_in_group("pushed"):
-			emit_signal("pushed_object", id)
+			emit_signal("pushed_object", id) # Sync last_pushed_object with _on_pushed_object() function
 			last_pushed_object = id
-
 		# Physics for linked boxes
-		angular_velocity = 0 # Prevent box rotations
-		if not self.is_in_group("pushed") and linkedBody.is_in_group("pushed"):
+		else: if not self.is_in_group("pushed") and linkedBody.is_in_group("pushed"):  # Sync box position
 			linear_velocity = linkedBody.linear_velocity
+			self.position.x = linkedBody.position.x
+		else: if self.is_in_group("pushed") and linkedBody.is_in_group("pushed"):  # Stop box movement
+			linear_velocity = Vector2(0, 0)
+			self.position.x = self.position.x
 
 func _on_pushed_object(pushedId):
 	last_pushed_object = pushedId

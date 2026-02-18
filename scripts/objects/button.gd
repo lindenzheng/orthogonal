@@ -3,8 +3,8 @@ extends Area2D
 signal button_pressed
 signal button_released
 
-@onready var sprite_normal = $CollisionShape2D/Button  # Normal sprite
-@onready var sprite_pressed = $CollisionShape2D/ButtonPressed  # Pressed sprite
+@onready var sprite_normal = $CollisionShape2D/Button
+@onready var sprite_pressed = $CollisionShape2D/ButtonPressed
 var objects_touching = 0
 
 func _ready():
@@ -20,14 +20,12 @@ func _on_Area2D_body_exited(body):
 	if objects_touching == 0:  # Only release if no bodies are touching
 		_handle_button_release(body)
 
-# Handles button press actions
-func _handle_button_press(body):
-	emit_signal("button_pressed")  # Emit button pressed signal
+func _handle_button_press(_body):
+	emit_signal("button_pressed")
 	_set_sprite_visibility(true)
 
-# Handles button release actions
-func _handle_button_release(body):
-	emit_signal("button_released")  # Emit button released signal
+func _handle_button_release(_body):
+	emit_signal("button_released")
 	_set_sprite_visibility(false)
 
 # Set sprite visibility based on state

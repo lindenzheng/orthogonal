@@ -232,6 +232,9 @@ position = Vector2(-554, 197)
 
 [node name="Objects" type="Node" parent="Player2_Level" unique_id=2115897889]
 
+[node name="Moving_Platform1" parent="Player2_Level/Objects" unique_id=285476426 instance=ExtResource("6_pcknf")]
+position = Vector2(248, -538)
+
 [node name="BoxA2" parent="Player2_Level/Objects" unique_id=1080582713 node_paths=PackedStringArray("linkedBody") instance=ExtResource("10_ifc5b")]
 position = Vector2(-100, -561)
 linkedBody = NodePath("../../../Player1_Level/Objects/BoxA1")
