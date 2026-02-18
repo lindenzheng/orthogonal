@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eipv17lxbfx3"
-path="res://.godot/imported/grumbledore.png-e2b533a214907feb1d81ac5b8dcde9bd.ctex"
+uid="uid://iwjjt4pssh8e"
+path="res://.godot/imported/waldorf.png-2ef0222789512757d7bc98f102473fcf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilemap/Sprites/grumbledore.png"
-dest_files=["res://.godot/imported/grumbledore.png-e2b533a214907feb1d81ac5b8dcde9bd.ctex"]
+source_file="res://assets/sprites/waldorf.png"
+dest_files=["res://.godot/imported/waldorf.png-2ef0222789512757d7bc98f102473fcf.ctex"]
 
 [params]
 

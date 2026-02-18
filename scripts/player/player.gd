@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var controls: PlayerControls = null
+@onready var player1_sprite = $Grumbledore
+@onready var player2_sprite = $Waldorf
 
 const SPEED = 300.0
 const PUSH_FORCE = 15.0
@@ -12,6 +14,13 @@ var currently_pushing: RigidBody2D = null
 func _ready():
 	add_to_group("player")
 	z_index = 99  # Sets layer to 99
+	
+	if controls.player_index == 0: # Set player sprite depending on index
+		player1_sprite.visible = true
+		player2_sprite.visible = false
+	else:
+		player1_sprite.visible = false
+		player2_sprite.visible = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

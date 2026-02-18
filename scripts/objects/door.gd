@@ -7,7 +7,7 @@ signal teleport_player
 @onready var sprite_normal = $CollisionShape2D/Door  # The normal sprite
 @onready var sprite_pressed = $CollisionShape2D/DoorOpen  # The sprite for the pressed state
 
-var location = self.global_position
+var location = self.global_position # Location of door (to link two)
 var players_in_range = {}
 var being_pressed = false
 var is_active = false
@@ -18,12 +18,12 @@ func _ready():
 	sprite_pressed.visible = false
 	location = self.global_position
 	
-# Called when the node enters the area
+# Detect player at door
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		players_in_range[body.get_instance_id()] = body
 
-# Called when the node exits the area
+# Detect player away from door
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("player"):
 		players_in_range.erase(body.get_instance_id())
@@ -36,23 +36,20 @@ func _process(_delta):
 				_open_door()
 
 func _open_door():
-	being_pressed = true
+	
+	being_pressed = true # Door is pressed (Prevent opening spam)
 	pressedPlayerId = players_in_range.keys()[0]
 	print(self.name + " opened by ", pressedPlayerId)  # Debug to show which player pressed
-	await _animate_scale(sprite_pressed, Vector2(0.25, 0.25), Vector2(0.25, 0.25))
-	#print("doorOpen")  # Debug
-	emit_signal("door_open", pressedPlayerId, location)
-	#print("doorClosed")  # Debug
-	await _animate_scale(sprite_normal, Vector2(0.25, 0.25), Vector2(0.25, 0.25))
-	emit_signal("door_closed")
-	being_pressed = false
 	
-func _animate_scale(sprite, start_scale, end_scale): 
 	_toggle_sprite_visibility()
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite, "scale", start_scale, 0.3)
-	await tween.finished
-	sprite.scale = end_scale
+	await get_tree().create_timer(0.3).timeout
+	emit_signal("door_open", pressedPlayerId, location)
+	_toggle_sprite_visibility()
+	await get_tree().create_timer(0.3).timeout
+	
+	emit_signal("door_closed")
+	
+	being_pressed = false # Door is not pressed (Allow opening)
 	
 func _toggle_sprite_visibility():
 	sprite_normal.visible = !sprite_normal.visible
