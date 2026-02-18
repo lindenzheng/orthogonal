@@ -13,7 +13,7 @@ var currently_pushing: RigidBody2D = null
 
 func _ready():
 	add_to_group("player")
-	z_index = 99  # Sets layer to 99
+	z_index = 99  # Sets cosmetic layer to 99 
 	
 	if controls.player_index == 0: # Set player sprite depending on index
 		player1_sprite.visible = true
@@ -36,6 +36,12 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_action_strength(controls.move_right) - Input.get_action_strength(controls.move_left)
 	if direction:
 		velocity.x = direction * SPEED
+		if direction > 0:
+			player1_sprite.flip_h = false
+			player2_sprite.flip_h = true
+		else:
+			player1_sprite.flip_h = true
+			player2_sprite.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

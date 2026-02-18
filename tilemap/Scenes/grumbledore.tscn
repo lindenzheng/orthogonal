@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blvt5b0cyd0y7"]
 
 [ext_resource type="Script" uid="uid://cqx1nfxqjwuhk" path="res://tilemap/Scripts/grumbledore.gd" id="1_8xlxi"]
-[ext_resource type="Texture2D" uid="uid://dyf6ywovphidh" path="res://assets/sprites/grumbledore 32x32.png" id="1_rh631"]
+[ext_resource type="Texture2D" uid="uid://eipv17lxbfx3" path="res://assets/sprites/grumbledore.png" id="2_oy8ft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xlxi"]
 size = Vector2(32, 61)
@@ -11,7 +11,9 @@ script = ExtResource("1_8xlxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=305328114]
 texture_filter = 1
-texture = ExtResource("1_rh631")
+position = Vector2(1.9999999, -6.9999995)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_oy8ft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1244972143]
 position = Vector2(5, -0.5)

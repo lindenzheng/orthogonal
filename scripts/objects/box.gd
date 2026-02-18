@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 			last_pushed_object = id
 
 		# Physics for linked boxes
-		angular_velocity = 0
+		angular_velocity = 0 # Prevent box rotations
 		if not self.is_in_group("pushed") and linkedBody.is_in_group("pushed"):
 			linear_velocity = linkedBody.linear_velocity
 

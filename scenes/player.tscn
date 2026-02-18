@@ -6,13 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://iwjjt4pssh8e" path="res://assets/sprites/waldorf.png" id="4_54rde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(32, 61)
+size = Vector2(32, 37.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1617476834]
 script = ExtResource("1_qhqgy")
 controls = ExtResource("2_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1969619478]
+position = Vector2(0, 11.75)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Grumbledore" type="Sprite2D" parent="." unique_id=1458513614]

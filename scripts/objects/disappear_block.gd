@@ -10,3 +10,4 @@ func _on_signal_hide() -> void:
 func _on_signal_show() -> void:
 	self.visible = true
 	collision_shape.set_deferred("disabled", false) # Show the hitbox
+	
