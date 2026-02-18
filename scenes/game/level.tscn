@@ -184,8 +184,13 @@ controls = ExtResource("2_y16i1")
 [node name="Intersections" type="Node" parent="." unique_id=308282023]
 
 [node name="Intersection1" parent="Intersections" unique_id=1974224575 instance=ExtResource("3_a2g3c")]
-position = Vector2(-358, -238.99998)
+position = Vector2(-407, -241)
 scale = Vector2(5, 100)
+
+[node name="Intersection2" parent="Intersections" unique_id=2025837093 instance=ExtResource("3_a2g3c")]
+position = Vector2(-240, -239.99998)
+scale = Vector2(2, 100)
+id = 1.0
 
 [node name="Player1_Level" type="Node" parent="." unique_id=632130190]
 
