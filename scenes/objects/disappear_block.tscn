@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dx7xhd7awh7ax"]
 
 [ext_resource type="Script" uid="uid://ccjqyq3ftcktn" path="res://scripts/objects/disappear_block.gd" id="1_lfmvv"]
-[ext_resource type="Texture2D" uid="uid://cwvvg8foqd5g2" path="res://assets/sprites/pixel.png" id="2_wc3yi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b121j"]
 
@@ -11,6 +10,9 @@ script = ExtResource("1_lfmvv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381180886]
 shape = SubResource("RectangleShape2D_b121j")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1719402173]
-scale = Vector2(10, 10)
-texture = ExtResource("2_wc3yi")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1843550037]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.13333334, 0.14901961, 0.1764706, 1)

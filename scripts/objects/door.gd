@@ -46,4 +46,3 @@ func _toggle_sprite_visibility():
 
 func _on_door_open(playerId, pairLocation):
 	emit_signal("teleport_player", playerId, self.global_position)
-	

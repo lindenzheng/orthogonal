@@ -20,9 +20,6 @@ func _ready() -> void:
 		collision_mask = 2  # Collision with the floor only
 		collision_layer = 2  # Layer 1 objects don't have collision (Other objects don't have collision except layer 2)
 
-	#if linkedBody:
-		#print(self.name + " linked with " + linkedBody.name)  # Debug
-
 func _on_in_intersection(area):
 	print(self.name, " entered intersection ", area.name)
 	if not last_pushed_object == id:
@@ -37,7 +34,6 @@ func _on_out_intersection(area):
 		collision_mask = 2 # Set to collide with the floor only
 		collision_layer = 2
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	# Code for linked boxes for intersections
 	if linkedBody:
