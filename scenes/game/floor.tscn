@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://d2vxqdvwse0p7"]
 
-[ext_resource type="Texture2D" uid="uid://dxnbgy55af4o4" path="res://assets/sprites/floor.png" id="1_ukw5w"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(360, 16)
 
 [node name="Floor" type="StaticBody2D" unique_id=404866798]
 collision_layer = 3
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1503698788]
+offset_left = -99999.0
+offset_top = -7.0
+offset_right = 900000.0
+offset_bottom = 7.0
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1171214583]
 scale = Vector2(100, 1)
 shape = SubResource("RectangleShape2D_0e48y")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=344343795]
-scale = Vector2(100, 1)
-texture = ExtResource("1_ukw5w")

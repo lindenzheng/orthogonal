@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bojskohbtf8ng"]
 
 [ext_resource type="Script" uid="uid://clv6i26stfmv4" path="res://scripts/objects/lever.gd" id="1_qxmkn"]
-[ext_resource type="Texture2D" uid="uid://es554wt6etih" path="res://assets/sprites/lever.png" id="2_qxmkn"]
-[ext_resource type="Texture2D" uid="uid://cvcihibey5543" path="res://assets/sprites/leverswitched.png" id="3_8di2w"]
+[ext_resource type="Texture2D" uid="uid://cwwcta53h0nb6" path="res://assets/tilemap/20260217 tilemap.png" id="2_a1pya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(10, 20)
@@ -11,18 +10,20 @@ size = Vector2(10, 20)
 script = ExtResource("1_qxmkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842766805]
-position = Vector2(1, 1)
-scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="Lever" type="Sprite2D" parent="CollisionShape2D" unique_id=1981456164]
+[node name="Switch" type="Sprite2D" parent="CollisionShape2D" unique_id=1981456164]
 position = Vector2(-9.536743e-07, 0)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_qxmkn")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_a1pya")
+region_enabled = true
+region_rect = Rect2(321, 1292, 118, 162)
 
-[node name="LeverSwitched" type="Sprite2D" parent="CollisionShape2D" unique_id=995195480]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_8di2w")
+[node name="SwitchPressed" type="Sprite2D" parent="CollisionShape2D" unique_id=995195480]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_a1pya")
+region_enabled = true
+region_rect = Rect2(570, 1292, 118, 162)
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]

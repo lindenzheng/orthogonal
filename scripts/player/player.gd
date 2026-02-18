@@ -58,7 +58,8 @@ func _physics_process(delta: float) -> void:
 		currently_pushing.remove_from_group("pushed")
 		currently_pushing = null  # Reset the reference
 
-func teleport_player(playerId, location):
+
+func teleport_player(playerId, location): # For Door Teleportation
 	if self.get_instance_id() == playerId:
 		self.position = location
 		print(playerId, " was teleported to ", location)  # Debug
