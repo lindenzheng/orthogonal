@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iwjjt4pssh8e"
-path="res://.godot/imported/waldorf.png-f2072e5799bb19d5cea7791b968a158a.ctex"
+path="res://.godot/imported/waldorf.png-08fc1e066c94d9396ada42b1da9cc978.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/waldorf.png"
-dest_files=["res://.godot/imported/waldorf.png-f2072e5799bb19d5cea7791b968a158a.ctex"]
+source_file="res://tilemap/Sprites/waldorf.png"
+dest_files=["res://.godot/imported/waldorf.png-08fc1e066c94d9396ada42b1da9cc978.ctex"]
 
 [params]
 
