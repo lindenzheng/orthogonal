@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmsqgo3mehqdn"]
 
-[ext_resource type="Script" uid="uid://chxlxjmr8f4hi" path="res://scripts/game.gd" id="1_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://jbpbc80kq8s2" path="res://scenes/level.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://chxlxjmr8f4hi" path="res://scripts/game/game.gd" id="1_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://jbpbc80kq8s2" path="res://scenes/game/level.tscn" id="2_yqjtg"]
 
 [node name="Game" type="Control" unique_id=762848362]
 layout_mode = 3

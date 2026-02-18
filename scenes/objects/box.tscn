@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d1pwbfp03a1fn"]
 
-[ext_resource type="Script" uid="uid://cbslfg8bwfxu4" path="res://scripts/box.gd" id="1_ks2v0"]
-[ext_resource type="Texture2D" uid="uid://cwwcta53h0nb6" path="res://assets/sprites/20260217 tilemap.png" id="2_c2ln5"]
-[ext_resource type="Script" uid="uid://cmr4bwm4fni24" path="res://scripts/box_area2d.gd" id="3_c2ln5"]
+[ext_resource type="Script" uid="uid://cbslfg8bwfxu4" path="res://scripts/objects/box.gd" id="1_ks2v0"]
+[ext_resource type="Texture2D" uid="uid://cwwcta53h0nb6" path="res://assets/tilemap/20260217 tilemap.png" id="2_c2ln5"]
+[ext_resource type="Script" uid="uid://cmr4bwm4fni24" path="res://scripts/objects/box_area2d.gd" id="3_c2ln5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klq6b"]
 
