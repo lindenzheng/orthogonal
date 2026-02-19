@@ -9,3 +9,5 @@ Controls:
 	# Player 2
 	- Left and Right Arrow: Left and Right
 	- Up Arrow: Interact
+
+Url: https://zinfernoz.itch.io/orthogonal?secret=HSmUljnDDfPG7LjtH8HgKdROpM
