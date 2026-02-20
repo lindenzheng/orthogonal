@@ -49,5 +49,5 @@ func _process(_delta: float) -> void:
 			linear_velocity = Vector2(0, 0)
 			self.position.x = self.position.x
 
-func _on_pushed_object(linkedBody):
-	last_pushed_object = linkedBody
+func _on_pushed_object(body):
+	last_pushed_object = body
