@@ -45,7 +45,7 @@ func _toggle_sprite_visibility():
 	sprite_normal.visible = !sprite_normal.visible
 	sprite_pressed.visible = !sprite_pressed.visible
 
-func _on_door_open(player_id, _pairLocation):
+func _on_pair_door_open(player_id, _pairLocation):
 	emit_signal("teleport_player", player_id, self.global_position)
 	_toggle_sprite_visibility()
 	await get_tree().create_timer(door_opening_delay).timeout

@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1rx8"]
 
 [node name="Intersection" type="Area2D" unique_id=1974224575]
+scale = Vector2(2, 500)
 script = ExtResource("1_yaimu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143771233]
