@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://jbpbc80kq8s2"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmj5ii7qrqs" path="res://scenes/player.tscn" id="1_5ceg4"]
-[ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player/player2_controls.tres" id="2_y16i1"]
+[ext_resource type="Resource" uid="uid://do2evqt18sebb" path="res://scripts/player/p2-controls.tres" id="2_y16i1"]
 [ext_resource type="PackedScene" uid="uid://lwahxeqejnra" path="res://scenes/objects/intersection.tscn" id="3_a2g3c"]
-[ext_resource type="PackedScene" uid="uid://dx7xhd7awh7ax" path="res://scenes/objects/disappearing_block.tscn" id="6_eyudv"]
-[ext_resource type="PackedScene" uid="uid://dp2p3bey3tnwp" path="res://scenes/objects/moving_platform.tscn" id="6_pcknf"]
+[ext_resource type="PackedScene" uid="uid://dx7xhd7awh7ax" path="res://scenes/objects/sliding-wall.tscn" id="6_eyudv"]
+[ext_resource type="PackedScene" uid="uid://dp2p3bey3tnwp" path="res://scenes/objects/moving-platform.tscn" id="6_pcknf"]
 [ext_resource type="PackedScene" uid="uid://uaxu3fr55fp8" path="res://scenes/objects/button.tscn" id="7_ivg8o"]
 [ext_resource type="PackedScene" uid="uid://bojskohbtf8ng" path="res://scenes/objects/switch.tscn" id="7_p2ltr"]
-[ext_resource type="PackedScene" uid="uid://d1pwbfp03a1fn" path="res://scenes/objects/box.tscn" id="10_ifc5b"]
+[ext_resource type="PackedScene" uid="uid://d1pwbfp03a1fn" path="res://scenes/objects/transferable/box.tscn" id="10_ifc5b"]
 [ext_resource type="PackedScene" uid="uid://dutbtime6keah" path="res://scenes/objects/door.tscn" id="11_s4muv"]
 [ext_resource type="Texture2D" uid="uid://dhonpc3lnc540" path="res://tilemap/Sprites/tilemap 32x32 shifted.png" id="12_8yj44"]
 

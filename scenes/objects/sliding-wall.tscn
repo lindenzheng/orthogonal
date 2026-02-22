@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dx7xhd7awh7ax"]
+
+[ext_resource type="Script" uid="uid://ccjqyq3ftcktn" path="res://scripts/objects/sliding-wall.gd" id="1_moado"]
+[ext_resource type="Texture2D" uid="uid://bp0ununf4dsvk" path="res://assets/tilemap/tilemap.png" id="2_32v6x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b121j"]
+size = Vector2(54, 134)
+
+[node name="Disappearing_Block" type="StaticBody2D" unique_id=63779807]
+script = ExtResource("1_moado")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381180886]
+shape = SubResource("RectangleShape2D_b121j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1283199921]
+texture = ExtResource("2_32v6x")
+region_enabled = true
+region_rect = Rect2(1389, 675, 59, 135)

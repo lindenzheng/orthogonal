@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dutbtime6keah"]
 
 [ext_resource type="Script" uid="uid://djc8glway5ofm" path="res://scripts/objects/door.gd" id="1_83dcw"]
-[ext_resource type="Texture2D" uid="uid://8110mn5plh0k" path="res://assets/tilemap/tilemap 2.png" id="2_uw3m6"]
+[ext_resource type="Texture2D" uid="uid://bp0ununf4dsvk" path="res://assets/tilemap/tilemap.png" id="2_uw3m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(22, 42)
+size = Vector2(134, 270)
 
 [node name="Door" type="Area2D" unique_id=2013910602]
 script = ExtResource("1_83dcw")
@@ -17,7 +17,7 @@ shape = SubResource("RectangleShape2D_0hol4")
 position = Vector2(-2, -1)
 texture = ExtResource("2_uw3m6")
 region_enabled = true
-region_rect = Rect2(810, 135, 135, 270)
+region_rect = Rect2(1215, 810, 135, 270)
 
 [node name="DoorOpen" type="ColorRect" parent="." unique_id=1535224379]
 visible = false

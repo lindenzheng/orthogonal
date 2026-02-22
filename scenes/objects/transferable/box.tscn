@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d1pwbfp03a1fn"]
 
 [ext_resource type="Script" uid="uid://cbslfg8bwfxu4" path="res://scripts/objects/box.gd" id="1_ks2v0"]
-[ext_resource type="Texture2D" uid="uid://8110mn5plh0k" path="res://assets/tilemap/tilemap 2.png" id="2_vfogt"]
-[ext_resource type="Script" uid="uid://cmr4bwm4fni24" path="res://scripts/objects/box_area2d.gd" id="3_c2ln5"]
+[ext_resource type="Texture2D" uid="uid://bp0ununf4dsvk" path="res://assets/tilemap/tilemap.png" id="2_vfogt"]
+[ext_resource type="Script" uid="uid://cmr4bwm4fni24" path="res://scripts/objects/box-area2d.gd" id="3_c2ln5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klq6b"]
 size = Vector2(89.33333, 89.33333)
@@ -14,7 +14,7 @@ script = ExtResource("1_ks2v0")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1983089680]
 texture = ExtResource("2_vfogt")
 region_enabled = true
-region_rect = Rect2(540, 270, 135, 135)
+region_rect = Rect2(1350, 540, 134, 135)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1202823925]
 position = Vector2(-9.536743e-07, -9.536743e-07)

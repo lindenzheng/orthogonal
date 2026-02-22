@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bojskohbtf8ng"]
 
 [ext_resource type="Script" uid="uid://clv6i26stfmv4" path="res://scripts/objects/switch.gd" id="1_qxmkn"]
-[ext_resource type="Texture2D" uid="uid://cwwcta53h0nb6" path="res://assets/tilemap/20260217 tilemap.png" id="2_a1pya"]
+[ext_resource type="Texture2D" uid="uid://cwwcta53h0nb6" path="res://assets/tilemap/(OBSOLETE) tilemap-1.png.png" id="2_a1pya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(10, 20)
