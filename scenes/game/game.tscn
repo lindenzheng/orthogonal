@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmsqgo3mehqdn"]
 
 [ext_resource type="Script" uid="uid://chxlxjmr8f4hi" path="res://scripts/game/game.gd" id="1_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://jbpbc80kq8s2" path="res://scenes/game/levels/level-test-1.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://lb54xj832su" path="res://scenes/game/levels/level-test-2.tscn" id="2_7h61r"]
 
 [node name="Game" type="Control" unique_id=762848362]
 layout_mode = 3
@@ -12,8 +12,8 @@ script = ExtResource("1_u5sy4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=51549558]
 layout_mode = 0
-offset_right = 1042.0
-offset_bottom = 512.0
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [node name="LeftViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=425844667]
 layout_mode = 2
@@ -23,13 +23,14 @@ stretch = true
 [node name="LeftSubViewport" type="SubViewport" parent="HBoxContainer/LeftViewportContainer" unique_id=1778681578]
 unique_name_in_owner = true
 handle_input_locally = false
+size = Vector2i(631, 720)
 render_target_update_mode = 4
 
 [node name="LeftCamera2D" type="Camera2D" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport" unique_id=116082882]
 unique_name_in_owner = true
 position_smoothing_enabled = true
 
-[node name="Level" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport" unique_id=1962545105 instance=ExtResource("2_yqjtg")]
+[node name="Level" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport" unique_id=1318442416 instance=ExtResource("2_7h61r")]
 unique_name_in_owner = true
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=1679378043]
@@ -44,6 +45,7 @@ stretch = true
 [node name="RightSubViewport" type="SubViewport" parent="HBoxContainer/RightViewportContainer" unique_id=937799425]
 unique_name_in_owner = true
 handle_input_locally = false
+size = Vector2i(631, 720)
 render_target_update_mode = 4
 
 [node name="RightCamera2D" type="Camera2D" parent="HBoxContainer/RightViewportContainer/RightSubViewport" unique_id=1086781770]

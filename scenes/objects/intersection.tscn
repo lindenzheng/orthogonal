@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dfnfbkxp4dgbn" path="res://scripts/objects/intersection.gd" id="1_yaimu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1rx8"]
+size = Vector2(70, 20)
 
 [node name="Intersection" type="Area2D" unique_id=1974224575]
 scale = Vector2(2, 500)
@@ -17,4 +18,4 @@ offset_left = -35.0
 offset_top = -10.0
 offset_right = 35.0
 offset_bottom = 10.0
-color = Color(1, 0.79607844, 0.79607844, 1)
+color = Color(0.26241866, 0.1593459, 0.24535385, 0.3764706)
