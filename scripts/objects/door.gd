@@ -24,6 +24,7 @@ func _process(_delta):
 	for player_id in players_in_range.keys():
 		var player = players_in_range[player_id]
 		if is_interaction_valid(player):
+			print("valid")
 			_open_door(player_id)
 
 func is_interaction_valid(player):

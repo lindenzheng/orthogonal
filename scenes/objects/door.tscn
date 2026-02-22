@@ -1,29 +1,29 @@
 [gd_scene format=3 uid="uid://dutbtime6keah"]
 
 [ext_resource type="Script" uid="uid://djc8glway5ofm" path="res://scripts/objects/door.gd" id="1_83dcw"]
-[ext_resource type="Texture2D" uid="uid://cwwcta53h0nb6" path="res://assets/tilemap/20260217 tilemap.png" id="2_xm0wp"]
+[ext_resource type="Texture2D" uid="uid://8110mn5plh0k" path="res://assets/tilemap/tilemap 2.png" id="2_uw3m6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(35, 54)
+size = Vector2(22, 42)
 
 [node name="Door" type="Area2D" unique_id=2013910602]
 script = ExtResource("1_83dcw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1193764953]
+position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Door" type="Sprite2D" parent="." unique_id=889209632]
 position = Vector2(-2, -1)
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("2_xm0wp")
+texture = ExtResource("2_uw3m6")
 region_enabled = true
-region_rect = Rect2(480, 152, 280, 352)
+region_rect = Rect2(810, 135, 135, 270)
 
 [node name="DoorOpen" type="ColorRect" parent="." unique_id=1535224379]
-offset_left = -18.0
-offset_top = -27.0
-offset_right = 18.0
-offset_bottom = 27.0
+offset_left = -58.0
+offset_top = -123.0
+offset_right = 54.0
+offset_bottom = 121.0
 color = Color(0.12156863, 0.12156863, 0.12156863, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

@@ -18,7 +18,7 @@ var current_level: Node2D = null
 func _ready() -> void:
 	# Assign the current level
 	current_level = %Level
-	
+
 	# Dynamically get players from current_level
 	players[0].player = current_level.get_node("Player1")
 	players[1].player = current_level.get_node("Player2")

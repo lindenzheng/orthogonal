@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 62.0
-height = 230.0
+height = 206.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1617476834]
 script = ExtResource("1_qhqgy")
@@ -19,10 +19,10 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_dqkch")
 
 [node name="Waldorf" type="Sprite2D" parent="." unique_id=754948817]
-position = Vector2(2.9999998, -1.9999996)
+position = Vector2(3, -2)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_qlg0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1969619478]
-position = Vector2(3, 64)
+position = Vector2(3, 76)
 shape = SubResource("CapsuleShape2D_dqkch")
