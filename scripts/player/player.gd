@@ -13,8 +13,8 @@ var currently_pushing: RigidBody2D = null
 
 func _ready():
 	add_to_group("player")
-	z_index = 99  # Sets cosmetic layer to 99 
-	
+	z_index = 99  # Sets cosmetic layer to 99
+
 	if controls.player_index == 0: # Set player sprite depending on index
 		player1_sprite.visible = true
 		player2_sprite.visible = false

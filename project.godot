@@ -21,14 +21,14 @@ config/description="Controls:
 	- Left and Right Arrow: Left and Right
 	- Up Arrow: Interact
 "
-run/main_scene="uid://bmsqgo3mehqdn"
+run/main_scene="uid://lb54xj832su"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://dm3sr6wh07816"
 
 [display]
 
-window/size/viewport_width=1050
-window/size/viewport_height=510
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
