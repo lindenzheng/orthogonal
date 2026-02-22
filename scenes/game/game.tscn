@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmsqgo3mehqdn"]
 
 [ext_resource type="Script" uid="uid://chxlxjmr8f4hi" path="res://scripts/game/game.gd" id="1_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://jbpbc80kq8s2" path="res://scenes/game/level.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://jbpbc80kq8s2" path="res://scenes/game/levels/level-test-1.tscn" id="2_yqjtg"]
 
 [node name="Game" type="Control" unique_id=762848362]
 layout_mode = 3
@@ -23,6 +23,7 @@ stretch = true
 [node name="LeftSubViewport" type="SubViewport" parent="HBoxContainer/LeftViewportContainer" unique_id=1778681578]
 unique_name_in_owner = true
 handle_input_locally = false
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="LeftCamera2D" type="Camera2D" parent="HBoxContainer/LeftViewportContainer/LeftSubViewport" unique_id=116082882]
@@ -44,6 +45,7 @@ stretch = true
 [node name="RightSubViewport" type="SubViewport" parent="HBoxContainer/RightViewportContainer" unique_id=937799425]
 unique_name_in_owner = true
 handle_input_locally = false
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="RightCamera2D" type="Camera2D" parent="HBoxContainer/RightViewportContainer/RightSubViewport" unique_id=1086781770]
