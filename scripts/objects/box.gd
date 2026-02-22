@@ -33,7 +33,7 @@ func _on_out_intersection(area):
 
 func _process(_delta: float) -> void:
 	angular_velocity = 0 # Prevent box rotations
-	
+
 	# Code for linked boxes for intersections
 	if linkedBody:
 		if self.is_in_group("pushed") and not linkedBody.is_in_group("pushed"):
