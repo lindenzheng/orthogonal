@@ -496,10 +496,10 @@ position = Vector2(1282, 473)
 tile_map_data = PackedByteArray("AAAAAAQAAAALAAEAAAAAAAUAAAALAAEAAAABAAAAAAANAAAAAAAKAAUAAAAOAAEAAAAKAAQAAAAOAAEAAAAKAAMAAAAOAAEAAAAKAAIAAAAOAAEAAAAKAAEAAAAOAAEAAAAKAAAAAAAOAAAAAAAJAAAAAAANAAAAAAAIAAAAAAANAAAAAAAHAAAAAAANAAAAAAAGAAAAAAANAAAAAAAFAAAAAAANAAAAAAAEAAAAAAANAAAAAAADAAAAAAANAAAAAAACAAAAAAANAAAAAAAAAAAAAAALAAAAAAAAAAMAAAALAAEAAAAAAAIAAAALAAEAAAAAAAEAAAALAAEAAAAIAA0AAAAOAAEAAAAIAAwAAAAOAAEAAAAIAAsAAAAOAAEAAAAIAAoAAAAOAAEAAAAIAAkAAAAOAAEAAAAIAAgAAAAOAAAAAAAHAAgAAAANAAAAAAAGAAgAAAANAAAAAAAFAAgAAAANAAAAAAAEAAgAAAANAAAAAAADAAgAAAANAAAAAAACAAgAAAANAAAAAAABAAgAAAANAAAAAAAAAAgAAAANAAAAAAD//wgAAAANAAAAAAD+/wgAAAANAAAAAAD9/wgAAAANAAAAAAD8/wgAAAANAAAAAAD7/wgAAAANAAAAAAD6/wgAAAALAAAAAAD6/wkAAAALAAEAAAD6/woAAAALAAEAAAD6/wsAAAALAAEAAAD6/wwAAAALAAEAAAD6/w0AAAALAAEAAAA=")
 tile_set = SubResource("TileSet_ssful")
 
-[node name="Disappearing_Block" parent="." unique_id=63779807 instance=ExtResource("8_t8wo4")]
+[node name="SlidingWall" parent="." unique_id=63779807 instance=ExtResource("8_t8wo4")]
 position = Vector2(473, 476)
 
-[connection signal="door_open" from="Door" to="Door2" method="_on_pair_door_open"]
+[connection signal="door_is_open" from="Door" to="Door2" method="_on_pair_door_open"]
 [connection signal="teleport_player" from="Door" to="Player2" method="teleport_player"]
-[connection signal="door_open" from="Door2" to="Door" method="_on_pair_door_open"]
+[connection signal="door_is_open" from="Door2" to="Door" method="_on_pair_door_open"]
 [connection signal="teleport_player" from="Door2" to="Player2" method="teleport_player"]

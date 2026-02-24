@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b121j"]
 size = Vector2(54, 134)
 
-[node name="Disappearing_Block" type="StaticBody2D" unique_id=63779807]
+[node name="SlidingWall" type="StaticBody2D" unique_id=63779807]
 script = ExtResource("1_moado")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381180886]

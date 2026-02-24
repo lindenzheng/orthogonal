@@ -28,7 +28,7 @@ _data = {
 &"move": SubResource("Animation_ms375")
 }
 
-[node name="Node2D" type="Node2D" unique_id=574504244]
+[node name="MovingPlatform" type="Node2D" unique_id=574504244]
 
 [node name="Moving_Platform" type="AnimatableBody2D" parent="." unique_id=1781914472]
 position = Vector2(0, -1.3598143)
