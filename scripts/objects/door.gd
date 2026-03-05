@@ -46,7 +46,8 @@ func _toggle_sprite_visibility():
 	open.visible = !open.visible
 	closed.visible = !closed.visible
 
-func _on_pair_door_open(player_id, _pairLocation):
+func _on_pair_door_open(player_id, pairLocation):
+	print("Teleported from ", pairLocation, " to ", self.global_position)
 	emit_signal("teleport_player", player_id, self.global_position)
 	_toggle_sprite_visibility()
 

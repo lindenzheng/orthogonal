@@ -454,7 +454,6 @@ sources/3 = SubResource("TileSetAtlasSource_j7kvm")
 sources/2 = SubResource("TileSetAtlasSource_ssful")
 
 [node name="Level" type="Node2D" unique_id=1318442416]
-position = Vector2(810, -1080)
 
 [node name="tilemap-layers" type="Node2D" parent="." unique_id=2057039244]
 

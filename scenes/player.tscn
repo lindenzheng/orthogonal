@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bus8f4cuawx0t" path="res://scripts/player/player.gd" id="1_qhqgy"]
 [ext_resource type="Resource" uid="uid://bwt8l18karmti" path="res://scripts/player/p1-controls.tres" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bn21wicf63nt3" path="res://assets/sprites/grumbledore-pixelated.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://eipv17lxbfx3" path="res://assets/sprites/grumbledore.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://72rdmg564hbm" path="res://assets/sprites/waldorf-pixelated.png" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://iwjjt4pssh8e" path="res://assets/sprites/waldorf.png" id="5_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 62.0
@@ -14,11 +16,23 @@ script = ExtResource("1_qhqgy")
 controls = ExtResource("2_dqkch")
 
 [node name="Grumbledore" type="Sprite2D" parent="." unique_id=1458513614]
+position = Vector2(-19, -14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_qlg0r")
+
+[node name="Grumbledore2" type="Sprite2D" parent="." unique_id=530158377]
+visible = false
 position = Vector2(-19, 42)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_dqkch")
 
 [node name="Waldorf" type="Sprite2D" parent="." unique_id=754948817]
+position = Vector2(19, -13)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_tuyoq")
+
+[node name="Waldorf2" type="Sprite2D" parent="." unique_id=1273032492]
+visible = false
 position = Vector2(3, -2)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_qlg0r")
